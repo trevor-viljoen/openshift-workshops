@@ -47,7 +47,7 @@ function wmataJsonToGeoJson(jsonData) {
   if (jsonData.BusPositions) {
     jsonData.BusPositions.forEach(function(item, index) {
       if (RAINBOW == 'true' && BLUE == 'false') { markerColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16); }
-      else if (RAINBOW == 'false' && BLUE == 'true') { markerColor = blue_palette[Math.floor(Math.random() * blue_palette.length + 1)]; }
+      else if (RAINBOW == 'false' && BLUE == 'true') { markerColor = blue_palette[Math.floor(Math.random() * (blue_palette.length - 1))]; }
       dataOut.features.push({type:"Feature",
           geometry: {
               type: "Point",
